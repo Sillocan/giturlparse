@@ -39,6 +39,6 @@ class BasePlatform:
         print(data)
         data["path"] = ""
         data["branch"] = ""
-        data["protocols"] = list(filter(lambda x: x, data["protocols"].split("+")))
-        data["pathname"] = data["pathname"].strip(":").rstrip("/")
+        data["protocols"] = list(filter(lambda x: x, data.get("protocols", "").split("+")))
+        data["pathname"] = data.get("pathname", "").strip(":").rstrip("/")
         return data
