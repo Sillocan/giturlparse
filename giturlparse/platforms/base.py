@@ -4,10 +4,10 @@ import re
 
 class BasePlatform:
     FORMATS = {
-        "ssh": r"(?P<protocols>(git\+)?(?P<protocol>ssh))?(://)?%(_user)s@%(host)s:%(repo)s%(dot_git)s",
-        "http": r"(?P<protocols>(git\+)?(?P<protocol>http))://%(host)s/%(repo)s%(dot_git)s",
-        "https": r"(?P<protocols>(git\+)?(?P<protocol>https))://%(host)s/%(repo)s%(dot_git)s",
-        "git": r"(?P<protocols>(?P<protocol>git))://%(host)s/%(repo)s%(dot_git)s",
+        "ssh": r"ssh://%(_user)s@%(domain)s:%(repo)s%(dot_git)s",
+        "http": r"http://%(domain)s/%(repo)s%(dot_git)s",
+        "https": r"https://%(domain)s/%(repo)s%(dot_git)s",
+        "git": r"git://%(domain)s/%(repo)s%(dot_git)s",
     }
 
     PATTERNS = {
